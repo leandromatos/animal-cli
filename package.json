@@ -1,0 +1,58 @@
+{
+  "name": "animal-cli",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "lib/cli.js",
+  "bin": {
+    "animal-cli": "lib/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/cli.d.ts",
+      "import": "./lib/cli.js",
+      "require": "./lib/cli.js"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf lib/*",
+    "compile": "tsc",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "resolve-alias": "tsc-alias",
+    "compile-and-resolve": "yarn compile && yarn resolve-alias",
+    "make-executable": "chmod +x lib/cli.js",
+    "build": "yarn clean && yarn compile-and-resolve && yarn make-executable",
+    "animal-cli": "yarn run build && node lib/cli.js",
+    "test:cov": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest watch",
+    "test": "vitest --run",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@leandromatos/commitlint-config": "^0.0.0-alpha.1",
+    "@leandromatos/eslint-config": "^3.0.0-rc.27",
+    "@types/figlet": "^1.7.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.13.9",
+    "@types/semver": "^7.5.8",
+    "@vitest/coverage-v8": "^3.0.7",
+    "@vitest/ui": "^3.0.7",
+    "eslint": "^9.21.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "reflect-metadata": "^0.2.2",
+    "rimraf": "^6.0.1",
+    "tsc-alias": "^1.8.11",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.7"
+  },
+  "dependencies": {
+    "@leandromatos/provider-manager": "^0.0.0-snapshot.20250306.1",
+    "colorette": "^2.0.20",
+    "commander": "^13.1.0",
+    "figlet": "^1.8.0",
+    "fs-extra": "^11.3.0"
+  }
+}

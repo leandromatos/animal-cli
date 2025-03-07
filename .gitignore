@@ -1,0 +1,25 @@
+# Mac OS X Finder
+.DS_Store
+
+# dependencies
+node_modules
+
+# build
+lib
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# environment
+.env
+
+# messages
+messages
+
+# npm package manager
+.npmrc
+
+# test coverage
+coverage

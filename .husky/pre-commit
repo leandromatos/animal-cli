@@ -1,0 +1,6 @@
+# run lint-staged to check for linting errors
+yarn lint-staged --verbose
+# check if yarn.lock is up to date
+yarn install --check-files
+# run unit tests
+yarn test
